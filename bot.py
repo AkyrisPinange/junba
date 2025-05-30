@@ -16,8 +16,9 @@ async def on_ready():
 
 async def main():
     async with bot:
-        await bot.load_extension("main.cogs.day_counter")
+      #  await bot.load_extension("main.cogs.day_counter")
         await bot.load_extension("main.cogs.gpt_chat")
+        await bot.load_extension("main.cogs.ranklol")
         await bot.start(BOT_TOKEN)
 
 asyncio.run(main())

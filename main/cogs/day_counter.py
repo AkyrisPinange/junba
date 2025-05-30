@@ -15,7 +15,7 @@ class DayCounter(commands.Cog):
         if not self.atualizar_menu.is_running():
             self.atualizar_menu.start()
 
-    @tasks.loop(hours=24)  # para testes, depois volte para hours=24
+    @tasks.loop(hours=24)
     async def atualizar_menu(self):
         canal = self.bot.get_channel(CANAL_ID_PICANHA)
         print(f"Canal obtido: {canal}")
