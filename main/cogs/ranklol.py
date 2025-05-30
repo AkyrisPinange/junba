@@ -2,6 +2,7 @@ import requests
 from discord.ext import commands
 from main.config import RIOT_API
 from main.utils.junba_ai import  ask_junba
+from  main.utils.riot_utils import translate_tier
 
 REGIAO = "br1"
 ROUTE_REGION = "americas"  # usado para o endpoint de account-v1
@@ -57,7 +58,7 @@ class LoLRank(commands.Cog):
                 return
 
             tier = solo["tier"]
-            rank = solo["rank"]
+            rank = translate_tier(solo["rank"])
             lp = solo["leaguePoints"]
             wins = solo["wins"]
             losses = solo["losses"]
