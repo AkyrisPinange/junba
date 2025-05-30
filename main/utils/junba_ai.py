@@ -48,20 +48,3 @@ async def ask_junba(prompt: str, history: list | None = None) -> str:
         print(f"❌ Junba API error: {e}")
         return "⚠️ O véio bugou... tenta dnovo aê."
 
-def translate_tier(tier: str) -> str:
-    tier_map = {
-        "IRON": "FERRO",
-        "BRONZE": "BRONZE",
-        "SILVER": "PRATA",
-        "GOLD": "OURO",
-        "PLATINUM": "PLATINA",
-        "EMERALD": "ESMERALDA",
-        "DIAMOND": "DIAMANTE",
-        "MASTER": "MESTRE",
-        "GRANDMASTER": "GRÃO-MESTRE",
-        "CHALLENGER": "DESAFIANTE"
-    }
-    return tier_map.get(tier.upper(), tier)
-
-def translate_rank(rank: str) -> str:
-    return rank  # Os ranks I, II, III, IV já são em algarismos romanos

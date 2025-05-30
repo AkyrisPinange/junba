@@ -72,7 +72,6 @@ class LoLRank(commands.Cog):
                 f"- Vitórias: {wins}\n"
                 f"- Derrotas: {losses}\n"
                 f"- Winrate: {winrate}%\n\n"
-                "Fale como Junba. Seja grosso, revoltado, e escreva como um véio nordestino desbocado."
             )
 
             resposta = await ask_junba(prompt)
