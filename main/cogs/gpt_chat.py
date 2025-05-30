@@ -2,6 +2,11 @@ from discord.ext import commands
 from openai import OpenAI
 from main.config import OPENROUTER_API_KEY
 
+if not OPENROUTER_API_KEY:
+    print("❌ OPENROUTER_API_KEY não encontrada")
+else:
+    print("✅ OPENROUTER_API_KEY carregada")
+
 client = OpenAI(
     api_key=OPENROUTER_API_KEY,
     base_url="https://openrouter.ai/api/v1"
