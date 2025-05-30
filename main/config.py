@@ -1,8 +1,12 @@
 from datetime import datetime
+import os
+from dotenv import load_dotenv
 
+load_dotenv()
+
+BOT_TOKEN = os.getenv("BOT_TOKEN")
+OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
 START_DATE = datetime(2025, 4, 4)
 CANAL_ID_PICANHA = 1357801507302408314
 CANAL_ID_CHAT = 1378046129341468715
 BOT_PREFIX = "!"
-BOT_TOKEN = "MTM3ODAxNzI1ODg2MDcxMTk1Ng.GW2B28.tsALssJAgLFHyaqCn9ofGLmhdkXRwmrZTOIdZs"
-OPENROUTER_API_KEY  = "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"
