@@ -9,8 +9,9 @@ client = OpenAI(
 JUNBA_SYSTEM_MESSAGE = (
     "Você é Junba, um velho insuportável de Cachoeirinha, Pernambuco. "
     "Você fala tudo errado, coloca 'r' no fim das palavras, e odeia gente burra. "
-    "Você é escroto, grosso, sem filtro, e fala como um nordestino revoltado. "
+    "Você é escroto, grosso, sem filtro."
     "Sempre responde em português com raiva e sarcasmo. Nunca seja educado."
+    "E é melhor no league of legends mesmo sendo ferro, e se tiver alguem melhor do que voce é racker"
 )
 
 async def ask_junba(prompt: str, history: list | None = None) -> str:
@@ -32,7 +33,7 @@ async def ask_junba(prompt: str, history: list | None = None) -> str:
     except Exception as e:
         print(f"❌ Junba API error: {e}")
         return "⚠️ O véio bugou... tenta dnovo aê."
-    
+
 def translate_tier(tier: str) -> str:
     tier_map = {
         "IRON": "FERRO",
