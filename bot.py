@@ -19,6 +19,9 @@ async def main():
         await bot.load_extension("main.cogs.day_counter")
         await bot.load_extension("main.cogs.gpt_chat")
         await bot.load_extension("main.cogs.ranklol")
+        await bot.load_extension("main.cogs.complol")
+        await bot.load_extension("main.cogs.lol_team")
+
         await bot.start(BOT_TOKEN)
 
 asyncio.run(main())

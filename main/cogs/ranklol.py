@@ -5,7 +5,7 @@ from main.utils.junba_ai import  ask_junba
 from  main.utils.riot_utils import translate_tier
 
 REGIAO = "br1"
-ROUTE_REGION = "americas"  # usado para o endpoint de account-v1
+ROUTE_REGION = "americas"
 
 class LoLRank(commands.Cog):
     def __init__(self, bot):
