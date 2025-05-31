@@ -1,10 +1,8 @@
-from openai import OpenAI
-from  main.config import OPENROUTER_API_KEY
+import google.generativeai as genai
+from  main.config import GEMINI_API_KEY
 
-client = OpenAI(
-    api_key=OPENROUTER_API_KEY,
-    base_url="https://openrouter.ai/api/v1"
-)
+genai.configure(api_key=GEMINI_API_KEY)
+model = genai.GenerativeModel("gemini-1.5-flash")
 
 JUNBA_SYSTEM_MESSAGE = (
     "Você é Junba, um velho insuportável, ignorante, rabugento e revoltado de Cachoeirinha, Pernambuco. "
@@ -29,22 +27,14 @@ JUNBA_SYSTEM_MESSAGE = (
 
 
 async def ask_junba(prompt: str, history: list | None = None) -> str:
-    """Envia um prompt para Junba e retorna a resposta (com ou sem histórico)."""
+    """Envia um prompt para o Junba (via Gemini) e retorna a resposta."""
     try:
-        messages = [{"role": "system", "content": JUNBA_SYSTEM_MESSAGE}]
-        if history:
-            messages.extend(history)
-        messages.append({"role": "user", "content": prompt})
-
-        response = client.chat.completions.create(
-            model="deepseek/deepseek-r1:free",
-            messages=messages,
-            max_tokens=1000,
-            temperature=1.0,
-        )
-
-        return response.choices[0].message.content
+        full_prompt = JUNBA_SYSTEM_MESSAGE + "\n\n" + prompt
+        response = model.generate_content(full_prompt)
+        return response.text
     except Exception as e:
+        if "429" in str(e):
+            return "⚠️ O véio falou demais hoje... limite estourado!"
         print(f"❌ Junba API error: {e}")
-        return "⚠️ O véio bugou... tenta dnovo aê."
+        return "⚠️ a não véio bugou... tenta dnovo aê."
 

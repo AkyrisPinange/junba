@@ -3,13 +3,13 @@ import os
 if os.getenv("RENDER") != "true":
     from dotenv import load_dotenv
     load_dotenv()
-    
+
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 if not BOT_TOKEN:
     raise ValueError("A variável de ambiente BOT_TOKEN não está definida.")
 
-OPENROUTER_API_KEY = os.environ["OPENROUTER_API_KEY"]
-if not OPENROUTER_API_KEY:
+GEMINI_API_KEY = os.environ["GEMINI_API_KEY"]
+if not GEMINI_API_KEY:
     raise ValueError("A variável de ambiente OPENROUTER_API_KEY não está definida.")
 
 RIOT_API= os.environ["RIOT_API"]
