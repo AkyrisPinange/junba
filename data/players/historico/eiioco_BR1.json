@@ -1,0 +1,22 @@
+[
+  {
+    "date": "2025-06-03",
+    "nome": "eiioco#BR1",
+    "solo": {
+      "tier": "PRATA",
+      "rank": "IV",
+      "lp": 50,
+      "wins": 29,
+      "losses": 35,
+      "winrate": 45
+    },
+    "flex": {
+      "tier": "OURO",
+      "rank": "I",
+      "lp": 21,
+      "wins": 56,
+      "losses": 64,
+      "winrate": 47
+    }
+  }
+]

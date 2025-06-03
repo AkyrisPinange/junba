@@ -1,0 +1,19 @@
+{
+  "nome": "junba342#BR1",
+  "solo": {
+    "tier": "BRONZE",
+    "rank": "I",
+    "lp": 13,
+    "wins": 66,
+    "losses": 66,
+    "winrate": 50
+  },
+  "flex": {
+    "tier": "OURO",
+    "rank": "IV",
+    "lp": 21,
+    "wins": 35,
+    "losses": 33,
+    "winrate": 51
+  }
+}

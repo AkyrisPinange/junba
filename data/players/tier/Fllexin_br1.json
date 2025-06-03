@@ -1,0 +1,19 @@
+{
+  "nome": "Fllexin#br1",
+  "solo": {
+    "tier": "OURO",
+    "rank": "IV",
+    "lp": 86,
+    "wins": 21,
+    "losses": 24,
+    "winrate": 47
+  },
+  "flex": {
+    "tier": "PRATA",
+    "rank": "I",
+    "lp": 28,
+    "wins": 47,
+    "losses": 44,
+    "winrate": 52
+  }
+}
