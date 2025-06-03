@@ -13,5 +13,3 @@ def translate_tier(tier: str) -> str:
     }
     return tier_map.get(tier.upper(), tier)
 
-def translate_rank(rank: str) -> str:
-    return rank
