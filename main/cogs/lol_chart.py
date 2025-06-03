@@ -3,6 +3,10 @@ import json
 import datetime
 from discord.ext import commands, tasks
 import discord
+from datetime import time, timezone, timedelta
+
+BRAZIL_TZ = timezone(timedelta(hours=-3))
+
 TIER_EMOJIS = {
     "FERRO": "🪨", "BRONZE": "🥉", "PRATA": "🥈", "OURO": "🥇",
     "PLATINA": "💎", "ESMERALDA": "🍀", "DIAMANTE": "🔷",
@@ -46,7 +50,7 @@ class EloChart(commands.Cog):
     async def elo_chart(self, ctx):
         await self.process_elo_ranking()
 
-    @tasks.loop(hours=24)
+    @tasks.loop(time=time(hour=13, minute=0, tzinfo=BRAZIL_TZ))
     async def daily_ranking(self):
         await self.process_elo_ranking()
 

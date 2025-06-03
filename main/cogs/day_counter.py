@@ -2,6 +2,11 @@ import discord
 from discord.ext import commands, tasks
 from main.config import CANAL_ID_PICANHA
 from main.utils.date_tools import days_from_begin
+from datetime import time, timezone, timedelta
+
+# Definir fuso de Brasília (-3 UTC)
+BRAZIL_TZ = timezone(timedelta(hours=-3))
+
 
 class DayCounter(commands.Cog):
     def __init__(self, bot):
@@ -15,7 +20,7 @@ class DayCounter(commands.Cog):
         if not self.atualizar_menu.is_running():
             self.atualizar_menu.start()
 
-    @tasks.loop(hours=24)
+    @tasks.loop(time=time(hour=12, minute=0, tzinfo=BRAZIL_TZ))
     async def atualizar_menu(self):
         canal = self.bot.get_channel(CANAL_ID_PICANHA)
         print(f"Canal obtido: {canal}")
