@@ -108,6 +108,7 @@ class EloChart(commands.Cog):
 
         embed = discord.Embed(
             title=f"📊 Ranking de Elo - {datetime.date.today().strftime('%d/%m/%Y')}",
+            description="Digiter '!salvarrank name#tagline' ou '!graficoelos' para atualizar o graficor",
             color=discord.Color.blue()
         )
 
