@@ -18,5 +18,25 @@
       "losses": 44,
       "winrate": 52
     }
+  },
+  {
+    "date": "2025-06-04",
+    "nome": "Fllexin#br1",
+    "solo": {
+      "tier": "OURO",
+      "rank": "IV",
+      "lp": 79,
+      "wins": 22,
+      "losses": 26,
+      "winrate": 46
+    },
+    "flex": {
+      "tier": "PRATA",
+      "rank": "I",
+      "lp": 28,
+      "wins": 47,
+      "losses": 44,
+      "winrate": 52
+    }
   }
 ]

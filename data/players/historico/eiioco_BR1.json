@@ -18,5 +18,25 @@
       "losses": 64,
       "winrate": 47
     }
+  },
+  {
+    "date": "2025-06-04",
+    "nome": "eiioco#BR1",
+    "solo": {
+      "tier": "PRATA",
+      "rank": "IV",
+      "lp": 0,
+      "wins": 20,
+      "losses": 40,
+      "winrate": 43
+    },
+    "flex": {
+      "tier": "OURO",
+      "rank": "I",
+      "lp": 21,
+      "wins": 56,
+      "losses": 64,
+      "winrate": 47
+    }
   }
 ]

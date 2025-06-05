@@ -4,6 +4,8 @@ import datetime
 from discord.ext import commands, tasks
 import discord
 from datetime import time, timezone, timedelta
+from main.services.riot_rank_service import update_all_players
+
 
 BRAZIL_TZ = timezone(timedelta(hours=-3))
 
@@ -19,7 +21,7 @@ TIER_MAP = {
 }
 RANK_MAP = {"IV": 0, "III": 1, "II": 2, "I": 3}
 
-RANK_CHANNEL_ID = 1379572040977088644
+RANK_CHANNEL_ID = 1072199872721195061 #1379572040977088644
 
 def calculate_elo_score(tier, rank, lp):
     return TIER_MAP.get(tier.upper(), 0) * 4 + RANK_MAP.get(rank.upper(), 0) + (lp / 100)
@@ -36,7 +38,7 @@ class DummyCtx:
         self.bot = bot
 
     async def send(self, *args, **kwargs):
-        pass  # Ignora respostas fora do canal fixo
+        pass
 
 class EloChart(commands.Cog):
     def __init__(self, bot):
@@ -59,6 +61,7 @@ class EloChart(commands.Cog):
         await self.bot.wait_until_ready()
 
     async def process_elo_ranking(self):
+        update_all_players()
         players = []
         today = datetime.date.today().strftime("%Y-%m-%d")
         path = "data/players/tier"
@@ -75,7 +78,6 @@ class EloChart(commands.Cog):
 
                     elo_solo = calculate_elo_score(solo["tier"], solo["rank"], solo["lp"]) if solo else 0
 
-                    # Salvar histórico
                     historico_path = f"data/players/historico/{file}"
                     os.makedirs("data/players/historico", exist_ok=True)
 
