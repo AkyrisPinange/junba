@@ -21,7 +21,7 @@ TIER_MAP = {
 }
 RANK_MAP = {"IV": 0, "III": 1, "II": 2, "I": 3}
 
-RANK_CHANNEL_ID = 1072199872721195061 #1379572040977088644
+RANK_CHANNEL_ID = 1379572040977088644
 
 def calculate_elo_score(tier, rank, lp):
     return TIER_MAP.get(tier.upper(), 0) * 4 + RANK_MAP.get(rank.upper(), 0) + (lp / 100)
